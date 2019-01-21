@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 
+// @Component() est un décorateur
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-root', /* id du composant il est ustilisé coté HTML pour afficher le composant*/
+  templateUrl: './app.component.html', /* le chemin vers le code HTML à injecter */
+  styleUrls: ['./app.component.scss'] /* un array contenant un ou plusieurs chemins vers les feuilles de styles */
 })
 export class AppComponent {
-  title = 'mon-projet-angular';
+  title = 'mo-toto';
 }
