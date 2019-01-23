@@ -7,5 +7,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'] /* un array contenant un ou plusieurs chemins vers les feuilles de styles */
 })
 export class AppComponent {
-  title = 'mo-toto';
+  isAuth = false;
+  toto = 0;
+
+  appareilOne = 'Machine à laver';
+  appareilTwo = 'Frigo';
+  appareilThree = 'Ordinateur';
+
+  constructor() {
+    setTimeout(() => {
+      this.isAuth = true;
+    }, 2000);
+
+    const test = setInterval(() => {
+      if (2 ===  this.toto) {
+        clearInterval(test);
+      }
+      this.toto += 1;
+    }, 1000);
+  }
+
+  onAllumer(): void {
+    console.log('On allume tout !');
+  }
 }
