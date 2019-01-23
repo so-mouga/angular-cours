@@ -2,15 +2,18 @@
   <div class="row">
     <div class="col-xs-12">
       <h2>Mes appareils</h2>
+      <!-- utilisation des pipes angular  -->
+      <p>Mis à jour : {{ lastUpdate | async | date: 'yMMMMEEEEd' | uppercase }}</p>
       <ul class="list-group">
         <!-- Propriétés personnalisées
         on envoie une valeur au module app-appareil qui a déclaré 
         le décorateur ( @Input() appareilName ) 
         on peut passer une variable ou directement un string
         -->
-        <app-appareil [appareilName]="appareilOne"></app-appareil>
-        <app-appareil [appareilName]="appareilTwo"></app-appareil>
-        <app-appareil [appareilName]="'Ordinateur'"></app-appareil>
+        <app-appareil  *ngFor="let appareil of appareils"
+        [appareilName]="appareil.name"
+        [appareilStatusPersonnalise]="appareil.status">
+        </app-appareil>
       </ul>
 
       <p>{{ toto }}</p>

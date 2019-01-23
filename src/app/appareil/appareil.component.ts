@@ -10,8 +10,8 @@ export class AppareilComponent implements OnInit {
   // Propriétés personnalisées
   // Ce décorateur, en effet, crée une propriété  appareilName
   // qu'on peut fixer depuis la balise  <app-appareil>  :
-
   @Input() appareilName: string;
+  @Input() appareilStatusPersonnalise: string;
 
 
   // String interpolation
@@ -26,5 +26,13 @@ export class AppareilComponent implements OnInit {
 
   getStatus(): string {
     return this.appareilStatus;
+  }
+
+  getColor() {
+    if (this.appareilStatusPersonnalise === 'allumé') {
+      return 'green';
+    } else if (this.appareilStatusPersonnalise === 'éteint') {
+      return 'red';
+    }
   }
 }
